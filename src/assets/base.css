@@ -1,0 +1,10 @@
+/* Reset & base mobile styles */
+* { box-sizing: border-box; }
+html, body, #app { height: 100%; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; color: #222; background: #f7f7f7; }
+img, svg, video, canvas, audio, iframe, embed, object { display: block; max-width: 100%; }
+button { font: inherit; }
+:root { color-scheme: light; }
+/* Safe area for iOS */
+.safe-area-bottom { height: env(safe-area-inset-bottom); }
