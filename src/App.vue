@@ -3,19 +3,18 @@
 </template>
 
 <script setup>
-import { load } from '@fingerprintjs/fingerprintjs'
-
-async function initFingerprint() {
-  try {
-    const fp = await load({ monitoring: false })
-    const result = await fp.get()
-    console.log('visitorId:', result.visitorId)
-  } catch (e) {
-    console.error('Fingerprint init failed:', e)
+import { v4 as uuidv4 } from 'uuid'
+const initUUID = () => {
+  let uuid = window.localStorage.getItem('uuid')
+  if (!uuid) {
+    uuid = uuidv4()
+    window.localStorage.setItem('uuid', uuid)
   }
+  console.log('UUID:', uuid)
 }
-
-initFingerprint()
+onload = () => {
+  initUUID()
+}
 </script>
 
 <style scoped></style>
