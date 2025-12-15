@@ -50,7 +50,26 @@ npm run format
 - `meta viewport` 已启用 `viewport-fit=cover`，适配全面屏安全区域。
 - 基础样式已包含轻量 Reset 与 Safe Area 占位。
 
+## 图标(FontAwesome)
+已集成 FontAwesome 图标库，使用方法如下：
+```html
+<i class="fa-solid fa-house"></i>
+```
+- 等待安装图标包：
+  - 实心图标包（free-solid-svg-icons）
+  - 线性图标包（free-regular-svg-icons）
+  - 品牌图标包（free-brands-svg-icons）
+
+``` js
+npm install @fortawesome/free-solid-svg-icons
+npm install @fortawesome/free-regular-svg-icons
+npm install @fortawesome/free-brands-svg-icons
+```
+
+- 使用方法
+ [https://www.runoob.com/font-awesome/fontawesome-tutorial.html]
+
 ## 备注
 
 - 若端口被占用，可在启动时指定：`set VITE_PORT=5174; npm run dev`（PowerShell 请使用 `$env:VITE_PORT=5174; npm run dev`）。
-- 图标位于 `public/favicon.svg`，可自行替换。
+- 网页标题图标位于 `public/favicon.svg`，可自行替换。
