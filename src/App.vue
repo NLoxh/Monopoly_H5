@@ -12,7 +12,7 @@ const initUUID = () => {
   }
   console.log('UUID:', uuid)
 }
-onload = () => {
+onMounted = () => {
   initUUID()
 }
 </script>

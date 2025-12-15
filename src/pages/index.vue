@@ -28,7 +28,7 @@
       <div class="card-container">
         <div class="feature-card" v-for="feature in features" :key="feature.id">
           <div class="card-icon">
-            <i :class="feature.icon"></i>
+            <FAI :icon="feature.icon" />
           </div>
           <h3>{{ feature.title }}</h3>
           <p>{{ feature.description }}</p>
@@ -47,23 +47,26 @@
 
 <script setup>
 import { ref } from 'vue'
+import { FontAwesomeIcon as FAI } from '@fortawesome/vue-fontawesome'
+import { faRocket, faShieldAlt, faChartLine } from '@fortawesome/free-solid-svg-icons'
 
+// 在 script setup 中导入组件即可在模板按需使用（无需全局注册）
 const features = ref([
   {
     id: 1,
-    icon: 'fas fa-rocket',
+    icon: faRocket,
     title: '极速性能',
     description: '采用最新技术栈，提供极致的用户体验'
   },
   {
     id: 2,
-    icon: 'fas fa-shield-alt',
+    icon: faShieldAlt,
     title: '安全可靠',
     description: '企业级安全保障，让您的数据更安全'
   },
   {
     id: 3,
-    icon: 'fas fa-chart-line',
+    icon: faChartLine,
     title: '数据分析',
     description: '强大的数据分析能力，助力业务增长'
   }

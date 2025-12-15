@@ -29,4 +29,23 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  // 生产构建优化
+  build: {
+    target: 'es2020',
+    minify: 'esbuild',
+    cssCodeSplit: true,
+    assetsInlineLimit: 4096, // 小文件内联阈值（4kb）
+    chunkSizeWarningLimit: 1000, // KB 警告阈值
+    // 使用 Vite 的正确配置项：显示压缩体积报告
+    reportCompressedSize: true,
+    rollupOptions: {
+       output: {
+          entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+        },
+    },
+    // 可根据需要开启 sourcemap（默认关闭以减小体积）
+    sourcemap: false,
+  }
 })
