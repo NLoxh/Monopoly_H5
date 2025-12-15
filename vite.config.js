@@ -35,22 +35,14 @@ export default defineConfig({
         cssCodeSplit: true,
         assetsInlineLimit: 4096, // 小文件内联阈值（4kb）
         chunkSizeWarningLimit: 1000, // KB 警告阈值
-        brotliSize: true,
+        // 使用 Vite 的正确配置项：显示压缩体积报告
+        reportCompressedSize: true,
         rollupOptions: {
             output: {
-                // 简单 vendor 拆分，Vue 单独一块，其余第三方归为 vendor
-                manualChunks: function (id) {
-                    if (id.includes('node_modules')) {
-                        if (id.includes('vue'))
-                            return 'vendor_vue';
-                        return 'vendor';
-                    }
-                },
-                // 保持较短的文件名，便于浏览器缓存
                 entryFileNames: 'assets/[name]-[hash].js',
                 chunkFileNames: 'assets/[name]-[hash].js',
                 assetFileNames: 'assets/[name]-[hash].[ext]'
-            }
+            },
         },
         // 可根据需要开启 sourcemap（默认关闭以减小体积）
         sourcemap: false,
