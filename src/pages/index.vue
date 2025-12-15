@@ -26,7 +26,7 @@
     <section class="features">
       <h2 class="section-title">核心特性</h2>
       <div class="card-container">
-        <div class="feature-card" v-for="feature in features" :key="feature.id" @click="goUrl(feature.url)">
+        <div class="feature-card" v-for="feature in features" :key="feature.id">
           <div class="card-icon">
             <i :class="feature.icon"></i>
           </div>
@@ -47,39 +47,30 @@
 
 <script setup>
 import { ref } from 'vue'
-// 通过 Vite 资源导入为 URL，移除路径前的空格并加上 ?url
-import AppH5 from '@/assets/costco-food-court-screen-release.apk?url'
-import App from '@/assets/costco-food-court-cater-frontend-release.apk?url'
 
 const features = ref([
   {
     id: 1,
     icon: 'fas fa-rocket',
-    title: '餐吧备餐H5',
-    url: AppH5,
-    description: '采用最新技术栈，提供极致的用户体验',
+    title: '极速性能',
+    description: '采用最新技术栈，提供极致的用户体验'
   },
   {
     id: 2,
     icon: 'fas fa-shield-alt',
-    title: '餐吧双屏',
-    url: App,
-    description: '企业级安全保障，让您的数据更安全',
+    title: '安全可靠',
+    description: '企业级安全保障，让您的数据更安全'
   },
   {
     id: 3,
     icon: 'fas fa-chart-line',
     title: '数据分析',
-    url:'',
-    description: '强大的数据分析能力，助力业务增长',
-  },
+    description: '强大的数据分析能力，助力业务增长'
+  }
 ])
 
 const handleClick = () => {
   console.log('开始探索！')
-}
-const goUrl = (url) => {
-  window.open(url, '_blank')
 }
 </script>
 
@@ -175,9 +166,7 @@ body {
   background: white;
   color: #667eea;
   cursor: pointer;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInUp 1s ease 0.4s;
   animation-fill-mode: both;
 }
@@ -211,9 +200,7 @@ body {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
@@ -260,11 +247,11 @@ body {
   .nav-links {
     display: none;
   }
-
+  
   .hero-title {
     font-size: 2.5rem;
   }
-
+  
   .hero-subtitle {
     font-size: 1.2rem;
   }
@@ -272,7 +259,4 @@ body {
 </style>
 
 <!-- 添加Font Awesome图标库 -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
