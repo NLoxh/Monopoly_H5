@@ -30,27 +30,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/About': RouteRecordInfo<
-      '/About',
-      '/About',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '/Home': RouteRecordInfo<
-      '/Home',
-      '/Home',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '/Monopoly': RouteRecordInfo<
-      '/Monopoly',
-      '/Monopoly',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
   }
 
   /**
@@ -67,24 +46,6 @@ declare module 'vue-router/auto-routes' {
     'src/pages/index.vue': {
       routes:
         | '/'
-      views:
-        | never
-    }
-    'src/pages/About.vue': {
-      routes:
-        | '/About'
-      views:
-        | never
-    }
-    'src/pages/Home.vue': {
-      routes:
-        | '/Home'
-      views:
-        | never
-    }
-    'src/pages/Monopoly.vue': {
-      routes:
-        | '/Monopoly'
       views:
         | never
     }

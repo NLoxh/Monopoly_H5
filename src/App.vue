@@ -12,9 +12,9 @@ const initUUID = () => {
   }
   console.log('UUID:', uuid)
 }
-onMounted = () => {
+onMounted(() => {
   initUUID()
-}
+})
 </script>
 
 <style scoped></style>
